@@ -1,0 +1,20 @@
+{
+  "name": "live-update-server",
+  "version": "0.1.0",
+  "description": "A tool for pushing WebSockets messages to client pages in response to local filesystem changes",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "bin": "./cli.js",
+  "dependencies": {
+    "ws": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j-s-n/live-update-server.git"
+  },
+  "author": "J. S. Nelson",
+  "license": "MIT"
+}
