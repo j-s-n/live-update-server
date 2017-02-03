@@ -32,15 +32,11 @@ live-update-server uses a standard configuration object. The default configurati
 }
 ```
 
-`targets` is an object where the keys are files/directories to watch and the values are messages to send when those files/directories change. The default config watches `./dist/` in your project's directory and sends the message "update" on change.
-
-`host` is the host for the client to connect to.
-
-`port` is the port that the server starts on and the client connects to.
-
-`options` is a set of options that are fed to `fs.watch` for each target.
-
-`callback` is a function that's called on the client side whenever a message is received. The default callback just logs the message, which isn't very useful. `callback` can be an actual function, or a string representation of one.
+* `targets` is an object where the keys are files/directories to watch and the values are messages to send when those files/directories change. The default config watches `./dist/` in your project's directory and sends the message "update" on change.
+* `host` is the host for the client to connect to.
+* `port` is the port that the server starts on and the client connects to.
+* `options` is a set of options that are fed to `fs.watch` for each target.
+* `callback` is a function that's called on the client side whenever a message is received. The default callback just logs the message, which isn't very useful. `callback` can be an actual function, or a string representation of one.
 
 If you want to override the default configuration, there are two ways to do it. First, you can set the `liveUpdateConfig` field in your package.json file. Second, you can pass a custom configuration file to any of the methods that live-update-server exposes. In our example, we're going to set one field in package.json and pass in the callback later in code.
 
@@ -79,7 +75,11 @@ var clientCode = LiveUpdateServer.getClientCode({callback: function (msg) {
 
 module.exports = {
   /* ...the rest of your webpack configuration... */
-  plugins: [new webpack.BannerPlugin({banner: clientCode, raw: true, entryOnly: true})]
+  plugins: [new webpack.BannerPlugin({
+    banner:clientCode,
+    raw: true,
+    entryOnly: true
+  })]
 };
 ```
 
