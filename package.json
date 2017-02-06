@@ -1,6 +1,6 @@
 {
   "name": "live-update-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool for pushing WebSockets messages to client pages in response to local filesystem changes",
   "main": "index.js",
   "files": [
