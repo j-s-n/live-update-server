@@ -2,4 +2,4 @@
 const LiveUpdateServer = require('./index.js');
 
 var {config} = LiveUpdateServer.start();
-console.log(`live-update-server: watching ${config.file} and listening for connections on port ${config.port}`);
+console.log(`live-update-server: watching ${Object.keys(config.targets)} and listening for connections on port ${config.port}`);
