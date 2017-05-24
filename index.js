@@ -34,8 +34,8 @@ function start (override) {
   var server = new ws.Server({port: config.port});
 
   var watchers = [];
-  for (var file in config.targets) {
-    var message = config.targets[file];
+  for (let file in config.targets) {
+    let message = config.targets[file];
     watchers.push(watch(file, config.options, function () {
       server.clients.forEach( function (client) {
         client.send(message);
